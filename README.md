@@ -2,17 +2,19 @@
 
 # React-Bookstore
 
-> This is a bookstore project made using react
+> This is a bookstore project made using react and redux
 
-Additional description about the project and its features.
+React-Bookstore is a front-end based application that will help them organize and manage bookstore.
 
 ## Built With
 
-- React,
-- React-DOM,
-- [create-react-app](https://github.com/facebook/create-react-app)
-- npm,
-- CSS,
+- Node.js
+- React
+- React-DOM
+- React-Create-App
+- Redux
+- npm
+- CSS
 - ES6
 
 ## Live Demo
@@ -21,12 +23,38 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-In order to run locally this project type the following commands over the terminal in Linux or Mac or the Windows cmd console:
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+- NPM
+- JavaScript
+
+### Setup
+
+Navigate to your desired location to download the contents of this repository.
+In order to clone this repository just type the following commands over the terminal in Linux or Mac or the Windows cmd console.
 
 ```s
 $ git clone https://github.com/guillainbisimwa/React-Bookstore.git
+
+```
+
+### Install
+
+Run the following commands to install dependencies:
+
+```s
 $ cd React-Bookstore
 $ npm install
+
+```
+
+### Usage
+
+In order to run this project locally, just type this command:
+
+```s
 $ npm start
 
 ```
@@ -44,6 +72,10 @@ $ npm start
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/guillainbisimwa/React-Bookstore/issues).
+
+## Acknowledgments
+
+- Project specifications by [Microverse](https://github.com/microverseinc/project-redux-bookstore).
 
 ## Show your support
 
