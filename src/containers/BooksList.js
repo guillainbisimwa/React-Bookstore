@@ -16,9 +16,7 @@ const BooksList = ({ books }) => (
         books.map((book) => (
           <tr key={book.id}>
             <Book
-              id={book.id}
-              title={book.title}
-              category={book.category}
+              book={book}
             />
           </tr>
         ))
@@ -32,11 +30,11 @@ const mapStateToProps = (state) => ({
 });
 
 BooksList.propTypes = {
-  books: PropTypes.oneOfType(['string', 'array', 'object']),
+  books: PropTypes.array,
 };
 
 BooksList.defaultProps = {
-  books: {},
+  books: [],
 };
 
 export default connect(mapStateToProps, null)(BooksList);
