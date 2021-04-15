@@ -1,9 +1,11 @@
-import { connect, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { REMOVE_BOOK } from '../actions';
 
-const BooksList = ({ books }) => {
+const BooksList = () => {
+  const books = useSelector((state) => state.bookReducer);
+
   const dispatch = useDispatch();
 
   const handleRemoveBook = (id) => {
@@ -34,10 +36,6 @@ const BooksList = ({ books }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  books: state.bookReducer,
-});
-
 BooksList.propTypes = {
   books: PropTypes.array,
 };
@@ -46,4 +44,4 @@ BooksList.defaultProps = {
   books: [],
 };
 
-export default connect(mapStateToProps, null)(BooksList);
+export default BooksList;

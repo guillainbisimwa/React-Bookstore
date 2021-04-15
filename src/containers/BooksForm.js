@@ -26,13 +26,13 @@ const BooksForm = () => {
   return (
     <>
       <form>
-        <input type="text" onChange={handleInput.bind(this)} value={bookName} />
-        <select onChange={handleSelect.bind(this)} value={bookCat}>
+        <input type="text" onChange={handleInput} value={bookName} />
+        <select onChange={handleSelect} value={bookCat}>
           {categories.map((category) => (
             <option key={category} value={category}>{ category }</option>
           ))}
         </select>
-        <input type="submit" onClick={handleSubmit.bind(this)} />
+        <input type="submit" onClick={handleSubmit} />
       </form>
     </>
   );
