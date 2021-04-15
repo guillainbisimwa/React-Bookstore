@@ -1,4 +1,8 @@
-const BooksList = () => (
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Book from '../components/Book';
+
+const BooksList = ({ books }) => (
   <table>
   <thead>
     <tr>
@@ -7,8 +11,32 @@ const BooksList = () => (
       <th>Category</th>
     </tr>
   </thead>
-    <tbody></tbody>
+    <tbody>
+      {
+        books.map((book) => (
+          <tr key={book.id}>
+            <Book
+              id={book.id}
+              title={book.title}
+              category={book.category}
+            />
+          </tr>
+        ))
+      }
+    </tbody>
   </table>
 );
 
-export default BooksList;
+const mapStateToProps = (state) => ({
+  books: state.bookReducer,
+});
+
+BooksList.propTypes = {
+  books: PropTypes.oneOfType(['string', 'array', 'object']),
+};
+
+BooksList.defaultProps = {
+  books: {},
+};
+
+export default connect(mapStateToProps, null)(BooksList);
