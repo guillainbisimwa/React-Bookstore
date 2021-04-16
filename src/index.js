@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import App from './components/App';
 import './index.css';
-
-class Bookstore extends React.Component {
-  // eslint-disable-next-line class-methods-use-this
-  render() {
-    return (
-      <div>Bookstore</div>
-    );
-  }
-}
-
-// ========================================
+import store from './reducers/index';
 
 ReactDOM.render(
-    <Bookstore />,
-    document.getElementById('root'),
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
