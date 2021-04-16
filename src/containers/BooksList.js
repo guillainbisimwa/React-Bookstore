@@ -8,8 +8,8 @@ const BooksList = () => {
 
   const dispatch = useDispatch();
 
-  const handleRemoveBook = (id) => {
-    dispatch(REMOVE_BOOK(id));
+  const handleRemoveBook = (book) => {
+    dispatch(REMOVE_BOOK(book));
   };
 
   return (
@@ -26,7 +26,7 @@ const BooksList = () => {
           books.map((book) => (
             <tr key={book.id}>
               <Book
-                book={book} removeBookHandler={ (book) => handleRemoveBook(book)}
+                book={book} removeBookHandler={ (book) => handleRemoveBook(book.id)}
               />
             </tr>
           ))

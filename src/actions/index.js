@@ -3,7 +3,7 @@ export const CREATE_BOOK = (book) => ({
   payload: book,
 });
 
-export const REMOVE_BOOK = (id) => ({
+export const REMOVE_BOOK = (book) => ({
   type: 'REMOVE_BOOK',
-  payoad: id,
+  payoad: book,
 });

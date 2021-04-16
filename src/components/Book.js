@@ -9,7 +9,7 @@ const Book = ({ book, removeBookHandler }) => (
     <td>
     <button
         type="button"
-        onClick={() => removeBookHandler(book.id)}
+        onClick={() => removeBookHandler(book)}
       >
         Remove Book
       </button>
