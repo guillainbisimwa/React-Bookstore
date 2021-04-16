@@ -1,4 +1,5 @@
-import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
+const CREATE_BOOK = 'CREATE_BOOK';
+const REMOVE_BOOK = 'REMOVE_BOOK';
 
 const defaultBooks = [
   {

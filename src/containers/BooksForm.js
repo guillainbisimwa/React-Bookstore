@@ -32,7 +32,7 @@ const BooksForm = () => {
             <option key={category} value={category}>{ category }</option>
           ))}
         </select>
-        <input type="submit" onClick={handleSubmit} />
+        <input type="button" onClick={handleSubmit} value='Submit' />
       </form>
     </>
   );
