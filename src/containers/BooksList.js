@@ -26,7 +26,7 @@ const BooksList = () => {
           books.map((book) => (
             <tr key={book.id}>
               <Book
-                book={book} removeBookHandler={ (book) => handleRemoveBook(book.id)}
+                book={book} removeBookHandler={ (book) => handleRemoveBook(book)}
               />
             </tr>
           ))
