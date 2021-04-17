@@ -1,15 +1,17 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const CREATE_BOOK = 'CREATE_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
 const defaultBooks = [
   {
-    id: Math.floor(Math.random() * 100), title: 'The Title 1', category: 'Action',
+    id: uuidv4(), title: 'The Title 1', category: 'Action',
   },
   {
-    id: Math.floor(Math.random() * 100), title: 'The Title 2', category: 'Biography',
+    id: uuidv4(), title: 'The Title 2', category: 'Biography',
   },
   {
-    id: Math.floor(Math.random() * 100), title: 'The Title 3', category: 'Learning',
+    id: uuidv4(), title: 'The Title 3', category: 'Learning',
   },
 ];
 
