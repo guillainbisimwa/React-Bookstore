@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { CREATE_BOOK } from '../actions';
+import { createBook } from '../actions';
 
 const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
@@ -8,31 +9,31 @@ const BooksForm = () => {
   const dispatch = useDispatch();
 
   const [bookName, setBookName] = useState('');
-  const [bookCat, setBookCat] = useState('');
+  const [bookCategory, setBookCategory] = useState('Action');
 
   const handleInput = ({ target: { value } }) => setBookName(value);
-  const handleSelect = ({ target: { value } }) => setBookCat(value);
+  const handleSelect = ({ target: { value } }) => setBookCategory(value);
 
   const handleSubmit = () => {
-    dispatch(CREATE_BOOK({
-      id: Math.floor(Math.random() * 1000),
+    dispatch(createBook({
+      id: uuidv4(),
       title: bookName,
-      category: bookCat,
+      category: bookCategory,
     }));
     setBookName('');
-    setBookCat('');
+    setBookCategory('Action');
   };
 
   return (
     <>
       <form>
         <input type="text" onChange={handleInput} value={bookName} />
-        <select onChange={handleSelect} value={bookCat}>
+        <select onChange={handleSelect} value={bookCategory}>
           {categories.map((category) => (
             <option key={category} value={category}>{ category }</option>
           ))}
         </select>
-        <input type="submit" onClick={handleSubmit} />
+        <input type="button" onClick={handleSubmit} value='Submit' />
       </form>
     </>
   );

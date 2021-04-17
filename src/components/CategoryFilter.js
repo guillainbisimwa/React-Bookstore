@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CategoryFilter = ({ handleFilter }) => {
-  const categories = ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi',
-  ];
+const CategoryFilter = ({ filterHandler }) => {
+  const categories = ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
   const categoryList = categories.map((category) => (
     <option key={category} value={category}>
       {category}
@@ -11,7 +10,7 @@ const CategoryFilter = ({ handleFilter }) => {
   ));
   return (
     <div>
-      <select onChange={handleFilter}>
+      <select onChange={(e) => filterHandler(e.target.value)}>
         {categoryList}
       </select>
     </div>
@@ -19,11 +18,11 @@ const CategoryFilter = ({ handleFilter }) => {
 };
 
 CategoryFilter.propTypes = {
-  handleFilter: PropTypes.func,
+  filterHandler: PropTypes.func,
 };
 
 CategoryFilter.defaultProps = {
-  handleFilter: () => {},
+  filterHandler: () => {},
 };
 
 export default CategoryFilter;

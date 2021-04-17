@@ -1,22 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { CHANGE_FILTER, REMOVE_BOOK } from '../actions';
+import { changeFilter, removeBook } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
 
 const BooksList = () => {
   const books = useSelector((state) => state.bookReducer);
-  const categories = useSelector((state) => state.filter);
+  const categories = useSelector((state) => state.filterReducer);
 
   const dispatch = useDispatch();
 
   const handleRemoveBook = (book) => {
-    dispatch(REMOVE_BOOK(book));
+    dispatch(removeBook(book));
   };
 
-  const handleFilterChange = (category) => {
-    dispatch(CHANGE_FILTER(category));
-  };
+  const handleFilterChange = (category) => dispatch(changeFilter(category));
 
   return (
   <div>
@@ -32,11 +30,11 @@ const BooksList = () => {
       <tbody>
         {
           books.filter((book) => (categories === 'All'
-            ? true
+            ? books
             : book.category === categories)).map((book) => (
             <tr key={book.id}>
               <Book
-                book={book} removeBookHandler={ (book) => handleRemoveBook(book.id)}
+                book={book} removeBookHandler={ (book) => handleRemoveBook(book)}
               />
             </tr>
           ))
