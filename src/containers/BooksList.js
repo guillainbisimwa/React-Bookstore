@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { REMOVE_BOOK } from '../actions';
+import { removeBook } from '../actions';
 
 const BooksList = () => {
   const books = useSelector((state) => state.bookReducer);
@@ -9,7 +9,7 @@ const BooksList = () => {
   const dispatch = useDispatch();
 
   const handleRemoveBook = (book) => {
-    dispatch(REMOVE_BOOK(book));
+    dispatch(removeBook(book));
   };
 
   return (
