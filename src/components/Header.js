@@ -37,7 +37,7 @@ const Header = () => {
         <AppBar position="static" color="inherit">
           <Toolbar>
             <Box display="flex" flexDirection="row" alignItems="center" className={classes.linkContainer}>
-              <Box variant="h5" className={classes.title}>Bookstore CM </Box>
+              <Box variant="h5" className={classes.title}>Bookstore CMS </Box>
               <Box className={classes.menuButton} >BOOKS</Box>
               <Box className={classes.menuButton} >CATEGORIES</Box>
             </Box>
