@@ -9,7 +9,7 @@ const BooksForm = () => {
   const dispatch = useDispatch();
 
   const [bookName, setBookName] = useState('');
-  const [bookCategory, setBookCategory] = useState('');
+  const [bookCategory, setBookCategory] = useState('Action');
 
   const handleInput = ({ target: { value } }) => setBookName(value);
   const handleSelect = ({ target: { value } }) => setBookCategory(value);
@@ -21,7 +21,7 @@ const BooksForm = () => {
       category: bookCategory,
     }));
     setBookName('');
-    setBookCategory('');
+    setBookCategory('Action');
   };
 
   return (
