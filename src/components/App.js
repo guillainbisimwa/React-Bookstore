@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { Box } from '@material-ui/core';
+import { Box, Container } from '@material-ui/core';
 import BooksList from '../containers/BooksList';
 import BooksForm from '../containers/BooksForm';
 import Header from './Header';
@@ -16,8 +16,10 @@ const App = () => {
   return (
   <Box className={classes.container}>
     <Header />
-    <BooksList />
-    <BooksForm />
+    <Container>
+      <BooksList />
+      <BooksForm />
+    </Container>
   </Box>
   );
 };

@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Box, Grid, Link,
+  Box, CircularProgress, Grid, Link, Typography,
 } from '@material-ui/core';
 
 const linkButton = (e, func) => {
@@ -33,7 +33,14 @@ const useStyles = makeStyles((theme) => ({
   linkButton: {
     color: '#3891d8',
     marginRight: theme.spacing(2),
-
+  },
+  progress: {
+    color: '#3891d8',
+    marginRight: theme.spacing(2),
+    marginTop: theme.spacing(1),
+  },
+  completed: {
+    color: '#757575',
   },
 }));
 
@@ -59,8 +66,14 @@ const Book = ({ book, removeBookHandler }) => {
             <Link className={classes.linkButton} href="#">Edit</Link>
           </div>
         </Grid>
-        <Grid item xs={4}>
-          2
+        <Grid item xs={4} display='flex' alignItems="center">
+          <Box display='flex' justifyContent="center" alignItems="center">
+            <CircularProgress thickness={3} className={classes.progress} size={70} variant="determinate" value={64} />
+            <Box >
+              <Typography variant='h4'>64%</Typography>
+              <Typography className={classes.completed} >Completed</Typography>
+            </Box>
+          </Box>
         </Grid>
         <Grid item xs={4}>
           3
