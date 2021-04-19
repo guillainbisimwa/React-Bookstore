@@ -31,10 +31,10 @@ const BooksList = () => {
         {
           books.filter((book) => (categories === 'All'
             ? books
-            : book.category === categories)).map((book) => (
+            : book.category === categories)).map((book, index) => (
             <tr key={book.id}>
               <Book
-                book={book} removeBookHandler={ (book) => handleRemoveBook(book)}
+                book={book} id={index + 1} removeBookHandler={ (book) => handleRemoveBook(book)}
               />
             </tr>
           ))
