@@ -2,13 +2,23 @@ import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Box, CircularProgress, Grid, Link, Typography,
+  Box, Button, CircularProgress, Grid, Link, Typography, withStyles,
 } from '@material-ui/core';
 
 const linkButton = (e, func) => {
   e.preventDefault();
   func();
 };
+
+const ColorButton = withStyles(() => ({
+  root: {
+    color: '#eee',
+    backgroundColor: '#0091ff',
+    '&:hover': {
+      backgroundColor: '#0091cc',
+    },
+  },
+}))(Button);
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -35,12 +45,19 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   progress: {
-    color: '#3891d8',
+    color: '#0091ff',
     marginRight: theme.spacing(2),
     marginTop: theme.spacing(1),
   },
   completed: {
     color: '#757575',
+  },
+  currentChapter: {
+    color: '#757575',
+    marginBottom: theme.spacing(2),
+  },
+  chapter: {
+    marginBottom: theme.spacing(2),
   },
 }));
 
@@ -48,7 +65,7 @@ const Book = ({ book, removeBookHandler }) => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.container} p={2} mt={5} color='inherit' boxShadow={2}>
+    <Box className={classes.container} p={3} mt={5} color='inherit' boxShadow={2}>
       <Grid container spacing={3}>
         <Grid item xs={4}>
           <div className={classes.category}>{ book.category }</div>
@@ -66,17 +83,25 @@ const Book = ({ book, removeBookHandler }) => {
             <Link className={classes.linkButton} href="#">Edit</Link>
           </div>
         </Grid>
-        <Grid item xs={4} display='flex' alignItems="center">
+        <Grid item xs={4}>
           <Box display='flex' justifyContent="center" alignItems="center">
             <CircularProgress thickness={3} className={classes.progress} size={70} variant="determinate" value={64} />
-            <Box >
+            <Box>
               <Typography variant='h4'>64%</Typography>
               <Typography className={classes.completed} >Completed</Typography>
             </Box>
           </Box>
         </Grid>
         <Grid item xs={4}>
-          3
+          <Box textAlign='center'>
+            <Box display='inline-grid' textAlign='left'>
+              <span className={classes.currentChapter}>CURRENT CHAPTER</span>
+              <span className={classes.chapter}>Chapter 17</span>
+              <ColorButton variant="contained" color="primary" className={classes.margin}>
+                Custom CSS
+              </ColorButton>
+            </Box>
+          </Box>
         </Grid>
       </Grid>
     </Box>

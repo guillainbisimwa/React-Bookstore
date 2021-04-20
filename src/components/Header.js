@@ -33,20 +33,20 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-        <AppBar position="static" color="inherit">
-          <Toolbar>
-            <Box display="flex" flexDirection="row" alignItems="center" className={classes.linkContainer}>
-              <Box variant="h5" className={classes.title}>Bookstore CMS </Box>
-              <Box className={classes.menuButton} >BOOKS</Box>
-              <Box className={classes.menuButton} >CATEGORIES</Box>
-            </Box>
-            <IconButton edge="start" className={classes.userIcon} color="inherit" aria-label="menu">
-                <AccountCircleRoundedIcon />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-    </div>
+    <Box className={classes.root}>
+      <AppBar position="static" color="inherit">
+        <Toolbar>
+          <Box display="flex" flexDirection="row" alignItems="center" className={classes.linkContainer}>
+            <Box variant="h5" className={classes.title}>Bookstore CMS </Box>
+            <Box className={classes.menuButton} >BOOKS</Box>
+            <Box className={classes.menuButton} >CATEGORIES</Box>
+          </Box>
+          <IconButton edge="start" className={classes.userIcon} color="inherit" aria-label="menu">
+              <AccountCircleRoundedIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
 
