@@ -19,9 +19,16 @@ const ColorButton = withStyles(() => ({
   },
 }))(Button);
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     background: '#fff',
+  },
+  addBookText: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(2),
+    color: '#757575',
+    fontWeight: 'bolder',
+    fontSize: '20px',
   },
 }));
 
@@ -50,6 +57,7 @@ const BooksForm = () => {
       <Divider/>
       <form>
         <Box mt={5}>
+          <div className={classes.addBookText}>ADD NEW BOOK</div>
           <Grid container spacing={3}>
             <Grid item xs={8}>
               <TextField
