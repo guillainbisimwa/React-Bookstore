@@ -1,11 +1,16 @@
+import { Box, Container } from '@material-ui/core';
 import BooksList from '../containers/BooksList';
 import BooksForm from '../containers/BooksForm';
+import Header from './Header';
 
 const App = () => (
-  <div>
-    <BooksList />
-    <BooksForm />
-  </div>
+  <Box>
+    <Header />
+    <Container>
+      <BooksList />
+      <BooksForm />
+    </Container>
+  </Box>
 );
 
 export default App;

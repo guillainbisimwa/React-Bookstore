@@ -5,13 +5,13 @@ const REMOVE_BOOK = 'REMOVE_BOOK';
 
 const defaultBooks = [
   {
-    id: uuidv4(), title: 'The Title 1', category: 'Action',
+    id: uuidv4(), title: 'The Wizarding World of Harry Potter', category: 'Horror',
   },
   {
-    id: uuidv4(), title: 'The Title 2', category: 'Biography',
+    id: uuidv4(), title: 'The Big Read: The Top 100', category: 'Biography',
   },
   {
-    id: uuidv4(), title: 'The Title 3', category: 'Learning',
+    id: uuidv4(), title: 'Speed-reading after lights out', category: 'Learning',
   },
 ];
 

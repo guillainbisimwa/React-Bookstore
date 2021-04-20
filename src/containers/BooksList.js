@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Box } from '@material-ui/core';
 import Book from '../components/Book';
 import { changeFilter, removeBook } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
@@ -19,28 +20,19 @@ const BooksList = () => {
   return (
   <div>
     <CategoryFilter filterHandler={handleFilterChange} />
-    <table>
-      <thead>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Category</th>
-        </tr>
-      </thead>
-      <tbody>
+      <Box>
         {
           books.filter((book) => (categories === 'All'
             ? books
-            : book.category === categories)).map((book) => (
-            <tr key={book.id}>
+            : book.category === categories)).map((book, index) => (
+            <Box key={book.id}>
               <Book
-                book={book} removeBookHandler={ (book) => handleRemoveBook(book)}
+                book={book} id={index + 1} removeBookHandler={ (book) => handleRemoveBook(book)}
               />
-            </tr>
+            </Box>
           ))
         }
-      </tbody>
-    </table>
+      </Box>
   </div>
   );
 };

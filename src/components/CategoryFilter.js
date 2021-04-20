@@ -1,19 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Box, MenuItem, TextField } from '@material-ui/core';
 
 const CategoryFilter = ({ filterHandler }) => {
   const categories = ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
   const categoryList = categories.map((category) => (
-    <option key={category} value={category}>
+    <MenuItem key={category} value={category}>
       {category}
-    </option>
+    </MenuItem>
   ));
   return (
-    <div>
-      <select onChange={(e) => filterHandler(e.target.value)}>
+    <Box pt={5}>
+      <TextField
+        onChange={(e) => filterHandler(e.target.value)}
+        select
+        fullWidth
+        label="Select a category"
+        variant="outlined"
+      >
         {categoryList}
-      </select>
-    </div>
+      </TextField>
+    </Box>
   );
 };
 

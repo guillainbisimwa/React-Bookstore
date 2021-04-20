@@ -6,6 +6,8 @@
 
 React-Bookstore is a front-end based application that will help them organize and manage bookstore.
 
+<img src="./src/img/screenshot.gif" alt="Screenshot" style="margin: auto; display: block">
+
 ## Built With
 
 - Node.js
@@ -16,6 +18,7 @@ React-Bookstore is a front-end based application that will help them organize an
 - npm
 - CSS
 - ES6
+- Material-ui
 
 ## Live Demo
 
