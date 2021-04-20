@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1.8),
   },
   linkButtonComment: {
+    color: '#3891d8',
     marginRight: theme.spacing(1.8),
   },
   progress: {
@@ -105,7 +106,7 @@ const Book = ({ book, removeBookHandler }) => {
             <Box display='inline-grid' textAlign='left'>
               <span className={classes.currentChapter}>CURRENT CHAPTER</span>
               <span className={classes.chapter}>Chapter 17</span>
-              <ColorButton variant="contained" color="primary" className={classes.margin}>
+              <ColorButton variant="contained" color="primary">
                 UPDATE PROGRESS
               </ColorButton>
             </Box>
