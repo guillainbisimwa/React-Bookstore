@@ -1,9 +1,3 @@
----
-noteId: "95171540a14711eba7b995a35ca09c41"
-tags: []
-
----
-
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # React-Bookstore
@@ -11,6 +5,8 @@ tags: []
 > This is a bookstore project made using react and redux
 
 React-Bookstore is a front-end based application that will help them organize and manage bookstore.
+
+<img src="./src/img/screenshot.gif" alt="Screenshot" style="margin: auto; display: block">
 
 ## Built With
 
@@ -22,6 +18,7 @@ React-Bookstore is a front-end based application that will help them organize an
 - npm
 - CSS
 - ES6
+- Material-ui
 
 ## Live Demo
 
