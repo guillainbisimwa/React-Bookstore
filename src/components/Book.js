@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Box, Button, CircularProgress, Grid, Link, Typography, withStyles,
+  Box, Button, CircularProgress, Divider, Grid, Link, Typography, withStyles,
 } from '@material-ui/core';
 
 const linkButton = (e, func) => {
@@ -42,7 +42,11 @@ const useStyles = makeStyles((theme) => ({
   },
   linkButton: {
     color: '#3891d8',
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1.8),
+    marginLeft: theme.spacing(1.8),
+  },
+  linkButtonComment: {
+    marginRight: theme.spacing(1.8),
   },
   progress: {
     color: '#0091ff',
@@ -72,7 +76,9 @@ const Book = ({ book, removeBookHandler }) => {
           <div className={classes.title}>{ book.title }</div>
           <div className={classes.author}>Author</div>
           <div className={classes.bottomButton}>
-            <Link className={classes.linkButton} href="#">Comments</Link>
+          <Grid container alignItems="center" className={classes.root}>
+            <Link className={classes.linkButtonComment} href="#">Comments</Link>
+            <Divider orientation="vertical" flexItem />
             <Link
               href="#"
               className={classes.linkButton}
@@ -80,7 +86,9 @@ const Book = ({ book, removeBookHandler }) => {
             >
               Remove
             </Link>
+            <Divider orientation="vertical" flexItem />
             <Link className={classes.linkButton} href="#">Edit</Link>
+          </Grid>
           </div>
         </Grid>
         <Grid item xs={4}>
@@ -93,12 +101,12 @@ const Book = ({ book, removeBookHandler }) => {
           </Box>
         </Grid>
         <Grid item xs={4}>
-          <Box textAlign='center'>
+          <Box borderLeft={1} borderColor="grey.200" textAlign='center'>
             <Box display='inline-grid' textAlign='left'>
               <span className={classes.currentChapter}>CURRENT CHAPTER</span>
               <span className={classes.chapter}>Chapter 17</span>
               <ColorButton variant="contained" color="primary" className={classes.margin}>
-                Custom CSS
+                UPDATE PROGRESS
               </ColorButton>
             </Box>
           </Box>
